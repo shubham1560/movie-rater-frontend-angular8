@@ -8,8 +8,7 @@ import { MainModule } from './main/main.module';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  {path: "",  pathMatch: "full", redirectTo: 'movies'}
-
+  {path: "",  pathMatch: "full", redirectTo: 'main'},
 ];
 
 @NgModule({
