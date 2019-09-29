@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
 
+import { ApiService } from './api.service'
+
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -26,7 +28,9 @@ const routes: Routes = [
     RouterModule,
   ],
 
-  providers: [],
+  providers: [
+    ApiService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

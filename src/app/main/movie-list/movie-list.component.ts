@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ApiService } from '../../api.service';
+
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
@@ -7,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieListComponent implements OnInit {
 
-  movies = ['Terminator', 'Shermanator'];
+  // movies = ['Terminator', 'Shermanator'];
 
-  constructor() { }
+  movies = [];
+
+  constructor(
+    private apiService: ApiService,
+  ) { }
 
   ngOnInit() {
+    this.movies = this.apiService.getMovies();
   }
 
 }
