@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
-
+import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service'
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ const routes: Routes = [
     AuthModule,
     MainModule,
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
   ],
 
