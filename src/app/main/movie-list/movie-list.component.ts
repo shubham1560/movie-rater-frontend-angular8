@@ -25,6 +25,14 @@ export class MovieListComponent implements OnInit {
       },
       error => { console.log(error); }
     );
+    // this.apiService.getMovie(1).subscribe(
+    //   data => {
+    //     console.log(data);
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // )
   }
 
 }
