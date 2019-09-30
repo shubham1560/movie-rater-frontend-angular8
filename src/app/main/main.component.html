@@ -1,4 +1,4 @@
 <p>main works!</p>
 
-<app-movie-list></app-movie-list>
+<app-movie-list [movies]="movies" (selectMovie)="selectMovie($event)"></app-movie-list>
 <app-movie-details [movie]="movie"></app-movie-details>

@@ -8,17 +8,35 @@ import { ApiService } from '../api.service';
 })
 export class MainComponent implements OnInit {
 
+  
+
   movie = {};
+  movies = [];
   constructor(
     private apiService : ApiService,
   ) { }
+  
+  selectMovie(movie) {
+    this.movie = movie;
+  }
 
   ngOnInit() {
+    this.apiService.getMovies().subscribe(
+      data => {
+        console.log(data);
+        this.movies = data;
+      }, 
+      error => {
+        console.log(error);
+      }
+    )
+
+
     this.apiService.getMovie(1).subscribe(
       data => {
         console.log("------------main---------------");
         console.log(data);
-        this.movie = data;
+        //this.movie = data;
         console.log("-------------------------------");
       },
       error => {
