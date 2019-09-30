@@ -20,6 +20,7 @@ export class MainComponent implements OnInit {
     this.movie = movie;
   }
 
+
   ngOnInit() {
     this.apiService.getMovies().subscribe(
       data => {

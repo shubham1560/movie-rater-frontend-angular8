@@ -23,6 +23,7 @@ export class MovieListComponent implements OnInit, Input {
   movieClicked(movie) {
     console.log(movie);
     this.selectMovie.emit(movie);
+    console.log(this.selectMovie);  
   }
 
   ngOnInit() {
