@@ -12,13 +12,12 @@ export class MovieListComponent implements OnInit, Input {
   // movies = ['Terminator', 'Shermanator'];
 
   @Input()
-  movies =[];
-
+  movies = [];
   @Output() selectMovie = new EventEmitter();
 
-  constructor(
-    private apiService: ApiService,
-  ) { }
+  // constructor(
+  //   private apiService: ApiService,
+  // ) { }
 
   movieClicked(movie) {
     console.log(movie);
@@ -27,6 +26,10 @@ export class MovieListComponent implements OnInit, Input {
   }
 
   ngOnInit() {
+    
+  console.log("--------movie list----------");
+  console.log(this.movies)
+
     // this.apiService.getMovies().subscribe(
     //   data => {
     //     console.log('---------movie-list----------');

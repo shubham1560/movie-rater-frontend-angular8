@@ -12,9 +12,9 @@ export class MovieDetailsComponent implements OnInit, Input {
   @Input()
   movie = {};
 
-  constructor(
-    private ApiService : ApiService,
-  ) { }
+  // constructor(
+  //   private ApiService : ApiService,
+  // ) { }
 
   ngOnInit() {
     // this.ApiService.getMovie(1).subscribe(
