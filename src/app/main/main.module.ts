@@ -8,7 +8,8 @@ import { MovieFormComponent } from './movie-form/movie-form.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 
 const routes: Routes = [
-  { path: 'main', component: MainComponent },
+  { path: 'main1', component: MainComponent },
+  { path:'main', component: MovieListComponent}
 ];
 
 @NgModule({

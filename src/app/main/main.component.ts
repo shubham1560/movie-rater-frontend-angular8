@@ -8,10 +8,8 @@ import { ApiService } from '../api.service';
 })
 export class MainComponent implements OnInit {
 
-  
-
   movie = {};
-  movies = [];
+  movies = {};
   constructor(
     private apiService : ApiService,
   ) { }
