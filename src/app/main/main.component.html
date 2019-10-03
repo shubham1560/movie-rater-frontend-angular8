@@ -1,4 +1,16 @@
-<p>main works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>
+                <p>Movies</p>
+            </h2>
+        </div>
 
-<app-movie-list [movies]="movies" (selectMovie)="selectMovie($event)"></app-movie-list>
-<app-movie-details [movie]="movie"></app-movie-details>
+        <div class="col-md-6">
+            <app-movie-list [movies]="movies" (selectMovie)="selectMovie($event)"></app-movie-list>
+        </div>
+        <div class="col-md-6">
+            <app-movie-details [movie]="movie"></app-movie-details>
+        </div>
+    </div>
+</div>
