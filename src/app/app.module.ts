@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +20,7 @@ const routes: Routes = [
     AppComponent
   ],
   imports: [
+    AngularFontAwesomeModule,
     AuthModule,
     MainModule,
     BrowserModule,

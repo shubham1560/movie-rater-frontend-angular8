@@ -1,7 +1,12 @@
 <p>movie-details works!</p>
 <div *ngIf=movie.title>
     {{movie.title}} <br> {{movie.description}} {{movie.average_rating}} <br> ({{movie.no_of_ratings}})
-</div>
-<div *ngIf=!movie>
-    Well
+
+
+    <fa name="star" [ngClass]="{'orange': movie.average_rating>0}"></fa>
+    <fa name="star" [ngClass]="{'orange': movie.average_rating>1}"></fa>
+    <fa name="star" [ngClass]="{'orange': movie.average_rating>2}"></fa>
+    <fa name="star" [ngClass]="{'orange': movie.average_rating>3}"></fa>
+    <fa name="star" [ngClass]="{'orange': movie.average_rating>4}"></fa>
+
 </div>

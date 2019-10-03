@@ -12,22 +12,8 @@ export class MovieDetailsComponent implements OnInit, Input {
   @Input()
   movie = {'title':'', 'description':'', 'average_rating':'', 'no_of_ratings':''};
 
-  // constructor(
-  //   private ApiService : ApiService,
-  // ) { }
-
   ngOnInit() {
-    // this.ApiService.getMovie(1).subscribe(
-    //   data => {
-    //     this.movie = data;
-    //     console.log("-------movie-details-----------");
-    //     console.log(data);
-    //     console.log("-------------------------------");
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // )
+  
   }
 
 }

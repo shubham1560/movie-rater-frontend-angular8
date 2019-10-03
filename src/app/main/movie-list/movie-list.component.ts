@@ -11,12 +11,12 @@ export class MovieListComponent implements OnInit, Input {
 
   // movies = ['Terminator', 'Shermanator'];
 
-  @Input()
+  @Input()   
   movies = [];
   @Output() selectMovie = new EventEmitter();
 
   // constructor(
-  //   private apiService: ApiService,
+  //   private  apiService: ApiService,
   // ) { }
 
   movieClicked(movie) {
