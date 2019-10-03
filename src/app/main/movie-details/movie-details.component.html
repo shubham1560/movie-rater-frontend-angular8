@@ -1,2 +1,7 @@
 <p>movie-details works!</p>
-{{movie.title}} <br> {{movie.description}}
+<div *ngIf=movie.title>
+    {{movie.title}} <br> {{movie.description}} {{movie.average_rating}} <br> ({{movie.no_of_ratings}})
+</div>
+<div *ngIf=!movie>
+    Well
+</div>

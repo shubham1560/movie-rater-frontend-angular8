@@ -10,7 +10,7 @@ import { ApiService } from '../../api.service';
 export class MovieDetailsComponent implements OnInit, Input {
   
   @Input()
-  movie = {};
+  movie = {'title':'', 'description':'', 'average_rating':'', 'no_of_ratings':''};
 
   // constructor(
   //   private ApiService : ApiService,
