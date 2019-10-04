@@ -15,8 +15,6 @@ export class ApiService {
     }
   );
 
-  //private movies = ['Terminator', 'Titanic'];
-
   constructor(
     private httpClient: HttpClient,
   ) { }
@@ -27,5 +25,10 @@ export class ApiService {
 
   getMovie(id) {
     return this.httpClient.get(this.base_url + id + "/");
+  }
+
+  rateMovie(rate: number, movieId: number) { 
+    const body = { stars: rate };
+    return this.httpClient.post(`${this.base_url}${movieId}/rate_movie/`, body, { headers: this.headers });
   }
 }
