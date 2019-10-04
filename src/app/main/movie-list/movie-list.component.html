@@ -1,4 +1,4 @@
 Movie List!
-<div *ngFor="let movie of movies" (click)="movieClicked(movie)">
+<div *ngFor="let movie of movies[0]" (click)="movieClicked(movie)">
     {{movie.title}} <br> {{movie.description}} <br> {{movie.average_rating}} <br><br>
 </div>

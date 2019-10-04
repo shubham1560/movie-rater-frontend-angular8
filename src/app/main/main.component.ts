@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 export class MainComponent implements OnInit {
 
   movie = {};
-  movies = {};
+  movies = [];
   constructor(
     private apiService : ApiService,
   ) { }
@@ -22,7 +22,7 @@ export class MainComponent implements OnInit {
     this.apiService.getMovies().subscribe(
       data => {
         console.log(data);
-        this.movies = (data);
+        this.movies.push(data);
         console.log(this.movies);
       }, 
       error => {
