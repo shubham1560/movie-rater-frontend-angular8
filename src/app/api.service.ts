@@ -11,7 +11,9 @@ export class ApiService {
   headers = new HttpHeaders(
     {
       'Content-Type': 'application/json',
-      Authorization: 'Token 961414ea9cd103f1722cc82c831866f938dd0e67',
+      // Authorization: 'Token 961414ea9cd103f1722cc82c831866f938dd0e67',
+      Authorization: 'Token 0003eeaed19ab5f42392e118290e9d6ad1d4554d',
+      
     }
   );
 
@@ -22,7 +24,7 @@ export class ApiService {
   getMovies() { 
     return this.httpClient.get(this.base_url, {headers:this.headers});
   }
-
+  
   getMovie(id: number) {
     return this.httpClient.get(`${ this.base_url }${id}/`, {headers: this.headers});
   }

@@ -25,12 +25,9 @@ export class MovieDetailsComponent implements OnInit, Input {
   }
   rateHover = function (rate) { 
     this.starsHovered = rate;
-    console.log(rate);
   }
 
   rateClicked = function (rate) { 
-    // console.log(rate);
-    console.log("rateCLicked called")
     this.starsHovered = rate;
     this.apiService.rateMovie(rate, this.movie.id).subscribe(
       result => { 
@@ -48,10 +45,8 @@ export class MovieDetailsComponent implements OnInit, Input {
     this.apiService.getMovie(id).subscribe(
       data => { 
         this.movie = data;
-        console.log(data);
       },
       error => { 
-        console.log(error);
       }
     )
   }

@@ -9,46 +9,15 @@ import { ApiService } from '../../api.service';
 })
 export class MovieListComponent implements OnInit, Input {
 
-  // movies = ['Terminator', 'Shermanator'];
-
   @Input()   
   movies = [];
   @Output() selectMovie = new EventEmitter();
 
-  // constructor(
-  //   private  apiService: ApiService,
-  // ) { }
-
   movieClicked(movie) {
-    console.log(movie);
     this.selectMovie.emit(movie);
-    console.log(this.selectMovie);  
   }
 
   ngOnInit() {
-    
-  console.log("--------movie list----------");
-  console.log(this.movies)
-
-    // this.apiService.getMovies().subscribe(
-    //   data => {
-    //     console.log('---------movie-list----------');
-    //     console.log(data);
-    //     console.log("-----------------------------");
-    //     this.movies = data;
-    //   },
-    //   error => { console.log(error); }
-    // );
-
-    
-    // this.apiService.getMovie(1).subscribe(
-    //   data => {
-    //     console.log(data);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // )
   }
 
 }
