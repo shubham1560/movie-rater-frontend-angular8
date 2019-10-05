@@ -23,8 +23,8 @@ export class ApiService {
     return this.httpClient.get(this.base_url, {headers:this.headers});
   }
 
-  getMovie(id) {
-    return this.httpClient.get(this.base_url + id + "/");
+  getMovie(id: number) {
+    return this.httpClient.get(`${ this.base_url }${id}/`, {headers: this.headers});
   }
 
   rateMovie(rate: number, movieId: number) { 
