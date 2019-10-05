@@ -1,4 +1,22 @@
-Movie List!
-<div *ngFor="let movie of movies[0]" (click)="movieClicked(movie)">
-    {{movie.title}} <br> {{movie.description}} <br> {{movie.average_rating}} <br><br>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of movies[0]">
+                <td (click)="movieClicked(movie)" style="cursor: pointer;">{{movie.title}}</td>
+                <td>
+                    <fa name="edit" style="cursor: pointer;"></fa> &nbsp;&nbsp;&nbsp;
+                    <fa name="trash" style="cursor: pointer;"></fa>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
 </div>
