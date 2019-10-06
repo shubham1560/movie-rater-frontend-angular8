@@ -13,6 +13,8 @@ export class MainComponent implements OnInit {
 
   movieDetails = false;
   movieEdit = false;
+  newMovieB = false;
+  
   constructor(
     private apiService : ApiService,
   ) { }
@@ -27,6 +29,11 @@ export class MainComponent implements OnInit {
     console.log("------------from main--------------");
     this.movie = movie;
     this.movieEdit = true;
+  }
+
+  newMovie() {
+    this.newMovieB = true;
+    console.log("Emmited from main------------");
   }
 
   ngOnInit() {

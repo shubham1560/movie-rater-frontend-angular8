@@ -13,6 +13,8 @@ export class MovieListComponent implements OnInit, Input {
   movies = [];
   @Output() selectMovie = new EventEmitter();
   @Output() editMovie = new EventEmitter();
+  @Output() movie = new EventEmitter();
+
 
   movieClicked(movie) {
     this.selectMovie.emit(movie);
@@ -22,6 +24,10 @@ export class MovieListComponent implements OnInit, Input {
     this.editMovie.emit(movie);
   }
 
+  newMovie() {
+    console.log("new Movie")
+    this.movie.emit();
+  }
   ngOnInit() {
   }
 
