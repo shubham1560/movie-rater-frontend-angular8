@@ -32,8 +32,18 @@ export class MainComponent implements OnInit {
   }
 
   newMovie() {
-    this.newMovieB = true;
+    this.movieEdit = true;
     console.log("Emmited from main------------");
+  }
+
+  deleteMovie(movie) { 
+    console.log("------------------------");
+    console.log(movie);
+    this.apiService.deleteMovie(movie.id).subscribe(
+      result => {
+        console.log(result);
+      }
+    )
   }
 
   ngOnInit() {

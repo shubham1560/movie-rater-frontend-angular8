@@ -33,4 +33,9 @@ export class ApiService {
     const body = { stars: rate };
     return this.httpClient.post(`${this.base_url}${movieId}/rate_movie/`, body, { headers: this.headers });
   }
+
+  deleteMovie( movieId: number) { 
+    return this.httpClient.delete(`${this.base_url}${movieId}`, {headers: this.headers});
+  }
+
 }

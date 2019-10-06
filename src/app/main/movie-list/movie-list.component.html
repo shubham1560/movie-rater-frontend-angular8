@@ -11,7 +11,7 @@
                 <td (click)="movieClicked(movie)" style="cursor: pointer;">{{movie.title}}</td>
                 <td>
                     <fa name="edit" (click)="movieEdit(movie)" style="cursor: pointer;"></fa> &nbsp;&nbsp;&nbsp;
-                    <fa name="trash" style="cursor: pointer;"></fa>
+                    <fa name="trash" (click)="delMovie(movie)" style="cursor: pointer;"></fa>
                 </td>
             </tr>
 

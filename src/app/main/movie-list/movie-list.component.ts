@@ -14,7 +14,7 @@ export class MovieListComponent implements OnInit, Input {
   @Output() selectMovie = new EventEmitter();
   @Output() editMovie = new EventEmitter();
   @Output() movie = new EventEmitter();
-
+  @Output() deleteMovie = new EventEmitter();
 
   movieClicked(movie) {
     this.selectMovie.emit(movie);
@@ -28,6 +28,13 @@ export class MovieListComponent implements OnInit, Input {
     console.log("new Movie")
     this.movie.emit();
   }
+
+  delMovie(movie) { 
+    console.log("Delete Movie")
+    this.deleteMovie.emit(movie);
+  }
+
+
   ngOnInit() {
   }
 

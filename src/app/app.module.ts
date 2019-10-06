@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +27,7 @@ const routes: Routes = [
     MainModule,
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
 
