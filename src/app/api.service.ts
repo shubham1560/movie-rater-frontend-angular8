@@ -34,8 +34,16 @@ export class ApiService {
     return this.httpClient.post(`${this.base_url}${movieId}/rate_movie/`, body, { headers: this.headers });
   }
 
+  saveMovie(movie) {
+    // console.log(movie);
+    console.log("-------------service called------------------");
+    const body = { title: movie.title, description: movie.description };
+    console.log(body);
+    return this.httpClient.post(`${this.base_url}`, body, { headers: this.headers });
+  }
+
   deleteMovie( movieId: number) { 
-    return this.httpClient.delete(`${this.base_url}${movieId}`, {headers: this.headers});
+    return this.httpClient.delete(`${this.base_url}${movieId}/`, {headers: this.headers});
   }
 
 }
