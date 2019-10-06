@@ -10,12 +10,23 @@ export class MainComponent implements OnInit {
 
   movie = {};
   movies = [];
+
+  movieDetails = false;
+  movieEdit = false;
   constructor(
     private apiService : ApiService,
   ) { }
   
   selectMovie(movie) {
     this.movie = movie;
+    this.movieDetails = true;
+  
+  }
+
+  editMovie(movie) {
+    console.log("------------from main--------------");
+    this.movie = movie;
+    this.movieEdit = true;
   }
 
   ngOnInit() {

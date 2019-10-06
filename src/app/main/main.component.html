@@ -4,11 +4,11 @@
         </div>
 
         <div class="col-md-6">
-            <app-movie-list [movies]="movies" (selectMovie)="selectMovie($event)"></app-movie-list>
+            <app-movie-list [movies]="movies" (selectMovie)="selectMovie($event)" (editMovie)="editMovie($event)"></app-movie-list>
         </div>
         <div class="col-md-6">
-            <app-movie-details [movie]="movie"></app-movie-details>
-            <app-movie-form [movie]="movie"></app-movie-form>
+            <app-movie-details *ngIf="movieDetails" [movie]="movie"></app-movie-details>
+            <app-movie-form *ngIf="movieEdit" [movie]="movie"></app-movie-form>
         </div>
     </div>
 </div>

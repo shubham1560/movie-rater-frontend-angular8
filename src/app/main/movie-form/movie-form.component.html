@@ -1,14 +1,18 @@
-<p>Movie Form</p>
+<div *ngIf=movie.title>
+    <p>Movie Form</p>
 
-<form action="">
-    <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" class="form-control" value={{movie.title}} id="title">
-    </div>
-    <div class="form-group">
-        <label for="description">Description</label>
-        <input type="email" class="form-control" value={{movie.description}} id="description">
-    </div>
+    <form>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" value={{movie.title}} id="title">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" value={{movie.description}} id="description">
+        </div>
 
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+        <!-- <button type="submit" class="btn btn-default" (click)="editMovie(movie)">Submit</button> -->
+        <div class="btn btn-default" (click)="editMovie(movie)">Submit</div>
+
+    </form>
+</div>

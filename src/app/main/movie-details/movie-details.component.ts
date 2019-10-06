@@ -17,12 +17,12 @@ export class MovieDetailsComponent implements OnInit, Input {
 
   constructor(
     private apiService: ApiService,
-  
   ) { }
 
   starsHovered = 0;
   ngOnInit() {
   }
+  
   rateHover = function (rate) { 
     this.starsHovered = rate;
   }

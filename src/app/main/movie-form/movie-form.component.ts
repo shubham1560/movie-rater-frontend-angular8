@@ -10,13 +10,15 @@ export class MovieFormComponent implements OnInit {
   @Input()
   movie = {'title':'', 'description':'', 'average_rating':'', 'no_of_ratings':''};
 
-
   constructor() { }
 
+  editMovie = function (movie) {
+    console.log(movie);
+  }
   ngOnInit() {
-    console.log("------form------");
-    console.log(this.movie);
-    console.log("----------------");
+    // console.log("------form------");
+    //console.log(this.movie);
+    //console.log("----------------");
   }
 
 }

@@ -10,7 +10,7 @@
             <tr *ngFor="let movie of movies[0]">
                 <td (click)="movieClicked(movie)" style="cursor: pointer;">{{movie.title}}</td>
                 <td>
-                    <fa name="edit" style="cursor: pointer;"></fa> &nbsp;&nbsp;&nbsp;
+                    <fa name="edit" (click)="movieEdit(movie)" style="cursor: pointer;"></fa> &nbsp;&nbsp;&nbsp;
                     <fa name="trash" style="cursor: pointer;"></fa>
                 </td>
             </tr>
