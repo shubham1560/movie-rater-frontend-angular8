@@ -30,14 +30,14 @@ export class ApiService {
   }
 
   rateMovie(rate: number, movieId: number) { 
-    const body = { stars: rate };
+    const body = JSON.stringify({ stars: rate });
     return this.httpClient.post(`${this.base_url}${movieId}/rate_movie/`, body, { headers: this.headers });
   }
 
   saveMovie(movie) {
     // console.log(movie);
     console.log("-------------service called------------------");
-    const body = { title: movie.title, description: movie.description };
+    const body = JSON.stringify({ title: movie.title, description: movie.description });
     console.log(body);
     return this.httpClient.post(`${this.base_url}`, body, { headers: this.headers });
   }

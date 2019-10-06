@@ -32,7 +32,7 @@ export class MainComponent implements OnInit {
   }
 
   newMovie() {
-    this.movieEdit = true;
+    this.newMovieB = true;
     // this.movie = undefined;
     console.log("Emmited from main------------");
   }
