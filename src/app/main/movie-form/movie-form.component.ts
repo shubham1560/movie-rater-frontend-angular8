@@ -28,11 +28,16 @@ export class MovieFormComponent implements OnInit {
 
   movieFormSave() { 
     this.SaveValue = this.movieForm.value;
-    this.apiService.saveMovie(this.SaveValue).subscribe(
-      results => { 
-        console.log(results);
-      }
-    );
+    console.log(this.movieForm.value);
+    if (this.movieForm.value.title && this.movieForm.value.description) {
+      this.apiService.saveMovie(this.SaveValue).subscribe(
+        results => {
+          // console.log(results);
+        }
+      );
+    } else {
+      console.log("Fill the value");
+    }
   }
   ngOnInit() {
     // console.log("------form------");
