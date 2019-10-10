@@ -14,7 +14,7 @@ import { ApiService } from './api.service'
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: 'main' },
+  { path: "", pathMatch: "full", redirectTo: 'auth' },
 ];
 
 @NgModule({
