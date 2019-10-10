@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 export class MainComponent implements OnInit {
 
   movie = {};
-  movies = [];
+  movies = {};
 
   movieDetails = false;
   movieEdit = false;
@@ -28,6 +28,7 @@ export class MainComponent implements OnInit {
   editMovie(movie) {
     console.log("------------from main--------------");
     this.movie = movie;
+    console.log(movie);
     this.movieEdit = true;
   }
 
@@ -41,8 +42,19 @@ export class MainComponent implements OnInit {
     console.log("------------------------");
     console.log(movie);
     this.apiService.deleteMovie(movie.id).subscribe(
-      result => {
-        console.log(result);
+      data => {
+        // this.movies = this.movies
+        console.log("----------result------------");
+        this.apiService.getMovies().subscribe(
+          data => {
+            console.log(data);
+            this.movies = (data);
+            console.log(this.movies);
+          }, 
+          error => {
+            console.log(error);
+          }
+        )
       }
     )
   }
@@ -51,7 +63,7 @@ export class MainComponent implements OnInit {
     this.apiService.getMovies().subscribe(
       data => {
         console.log(data);
-        this.movies.push(data);
+        this.movies = (data);
         console.log(this.movies);
       }, 
       error => {

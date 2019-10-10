@@ -22,7 +22,8 @@ export class ApiService {
   ) { }
 
   getMovies() { 
-    return this.httpClient.get(this.base_url, {headers:this.headers});
+    console.log("Service called");
+    return this.httpClient.get(this.base_url, { headers: this.headers });
   }
   
   getMovie(id: number) {
