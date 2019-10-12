@@ -47,4 +47,10 @@ export class ApiService {
     return this.httpClient.delete(`${this.base_url}${movieId}/`, {headers: this.headers});
   }
 
+  loginUser(authData) { 
+    console.log(authData);
+    console.log("from Service--------------");
+    return this.httpClient.get(`${ this.base_url }`, {headers: this.headers});
+  }
+
 }

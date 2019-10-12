@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-auth',
@@ -13,10 +14,13 @@ export class AuthComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor() { }
+  constructor(
+    private apiService : ApiService
+  ) {}
 
   authenticate() { 
     console.log(this.authForm);
+    this.apiService.loginUser(this.authForm.value);
   }
 
 
