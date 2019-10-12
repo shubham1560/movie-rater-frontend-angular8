@@ -10,7 +10,7 @@ import { ApiService } from '../api.service';
 export class AuthComponent implements OnInit {
 
   authForm = new FormGroup({
-    email: new FormControl(''),
+    username: new FormControl(''),
     password: new FormControl(''),
   });
 
@@ -20,7 +20,11 @@ export class AuthComponent implements OnInit {
 
   authenticate() { 
     console.log(this.authForm);
-    this.apiService.loginUser(this.authForm.value);
+    this.apiService.loginUser(this.authForm.value).subscribe(
+      results => { 
+        console.log(results);
+      }
+    )
   }
 
 

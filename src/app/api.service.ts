@@ -6,7 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ApiService {
 
-  base_url = "http://127.0.0.1:8000/api/movies/";
+  base_url = "http://127.0.0.1:8000/";
+  base_movie_url = `${this.base_url}api/movies/`;
 
   headers = new HttpHeaders(
     {
@@ -23,16 +24,16 @@ export class ApiService {
 
   getMovies() { 
     console.log("Service called");
-    return this.httpClient.get(this.base_url, { headers: this.headers });
+    return this.httpClient.get(this.base_movie_url, { headers: this.headers });
   }
   
   getMovie(id: number) {
-    return this.httpClient.get(`${ this.base_url }${id}/`, {headers: this.headers});
+    return this.httpClient.get(`${ this.base_movie_url }${id}/`, {headers: this.headers});
   }
 
   rateMovie(rate: number, movieId: number) { 
     const body = JSON.stringify({ stars: rate });
-    return this.httpClient.post(`${this.base_url}${movieId}/rate_movie/`, body, { headers: this.headers });
+    return this.httpClient.post(`${this.base_movie_url}${movieId}/rate_movie/`, body, { headers: this.headers });
   }
 
   saveMovie(movie) {
@@ -40,17 +41,22 @@ export class ApiService {
     console.log("-------------service called------------------");
     const body = JSON.stringify({ title: movie.title, description: movie.description });
     console.log(body);
-    return this.httpClient.post(`${this.base_url}`, body, { headers: this.headers });
+    return this.httpClient.post(`${this.base_movie_url}`, body, { headers: this.headers });
   }
 
   deleteMovie( movieId: number) { 
-    return this.httpClient.delete(`${this.base_url}${movieId}/`, {headers: this.headers});
+    return this.httpClient.delete(`${this.base_movie_url}${movieId}/`, {headers: this.headers});
   }
 
   loginUser(authData) { 
     console.log(authData);
+    // const body = JSON.stringify(authData);
+    const body = authData;
+    console.log(body);
     console.log("from Service--------------");
-    return this.httpClient.get(`${ this.base_url }`, {headers: this.headers});
+    return this.httpClient.post("http://127.0.0.1:8000/auth/", body);
+
+    // return this.httpClient.post(`${this.base_url}auth/`, body, { headers: this.headers });
   }
 
 }
