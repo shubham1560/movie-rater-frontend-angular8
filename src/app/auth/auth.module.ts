@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { RouterModule, Routes, Router } from '@angular/router';
 
 const routes: Routes = [
@@ -12,7 +14,8 @@ const routes: Routes = [
   declarations: [AuthComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule
   ], 
   exports: [
     RouterModule,
