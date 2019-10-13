@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,17 +10,19 @@ export class ApiService {
   base_url = "http://127.0.0.1:8000/";
   base_movie_url = `${this.base_url}api/movies/`;
 
+  token = this.cookieService.get("token");
   headers = new HttpHeaders(
     {
       'Content-Type': 'application/json',
       // Authorization: 'Token 961414ea9cd103f1722cc82c831866f938dd0e67',
-      Authorization: 'Token 0003eeaed19ab5f42392e118290e9d6ad1d4554d',
+      Authorization: `Token ${this.token}`,
       
     }
   );
 
   constructor(
     private httpClient: HttpClient,
+    private cookieService: CookieService
   ) { }
 
   getMovies() { 

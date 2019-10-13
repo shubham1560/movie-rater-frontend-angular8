@@ -34,7 +34,10 @@ export class AuthComponent implements OnInit {
       (results : TokenObj )=> { 
         // console.log(results);
         this.cookieService.set("token", results.token);
+        console.log("--------------cookie--------------------set");
         console.log(this.cookieService.get("token"));
+        // this.ngOnInit();
+        this.router.navigate(['/main1']);
       },
       error => {
         console.log(error);
@@ -50,6 +53,9 @@ export class AuthComponent implements OnInit {
     // console.log(a);
     // console.log(mrToken + "---------------from init");
     if (mrToken) {
+      // this.router.navigate(['/main', '/main1']);
+      this.router.navigate(['/main1']);
+
       console.log("logged In");
     } else { 
       console.log("logged Out");
