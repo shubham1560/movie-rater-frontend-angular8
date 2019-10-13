@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { CookieService } from 'ngx-cookie-service';
 // import { ConsoleReporter } from 'jasmine';
+import { Router } from '@angular/router';
 
 interface TokenObj { 
   token: string;
@@ -22,7 +23,8 @@ export class AuthComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private cookieService : CookieService
+    private cookieService: CookieService,
+    private router: Router
   ) {}
 
   token = "";
@@ -40,8 +42,18 @@ export class AuthComponent implements OnInit {
     )
   }
 
-
   ngOnInit() {
+    const mrToken = this.cookieService.get("token");
+    console.log("logged In");
+    // this.cookieService.delete("token");
+    console.log(this.cookieService.get("token"));
+    // console.log(a);
+    // console.log(mrToken + "---------------from init");
+    if (mrToken) {
+      console.log("logged In");
+    } else { 
+      console.log("logged Out");
+    }
     // this.cookieService.set( 'Test', 'Hello World' );
     // this.cookieValue = this.cookieService.get('Test');
     // console.log(this.cookieValue)
