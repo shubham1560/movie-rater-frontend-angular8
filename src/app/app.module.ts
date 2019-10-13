@@ -9,7 +9,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from './api.service'
+import { ApiService } from './api.service';
+
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 
@@ -36,6 +38,7 @@ const routes: Routes = [
   ],
 
   providers: [
+    CookieService,
     ApiService,
   ],
   bootstrap: [AppComponent]
