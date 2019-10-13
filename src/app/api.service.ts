@@ -25,9 +25,21 @@ export class ApiService {
     private cookieService: CookieService
   ) { }
 
+  getAuthorizationHeader() { 
+    const token  = this.cookieService.get("token");
+    return new HttpHeaders(
+      {
+        'Content-Type': 'application/json',
+        // Authorization: 'Token 961414ea9cd103f1722cc82c831866f938dd0e67',
+        Authorization: `Token ${token}`,
+        
+      }
+    );
+  }
+
   getMovies() { 
     console.log("Service called");
-    return this.httpClient.get(this.base_movie_url, { headers: this.headers });
+    return this.httpClient.get(this.base_movie_url, { headers: this.getAuthorizationHeader() });
   }
   
   getMovie(id: number) {

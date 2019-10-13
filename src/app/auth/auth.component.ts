@@ -35,7 +35,7 @@ export class AuthComponent implements OnInit {
         // console.log(results);
         this.cookieService.set("token", results.token);
         console.log("--------------cookie--------------------set");
-        console.log(this.cookieService.get("token"));
+        // console.log(this.cookieService.get("token"));
         // this.ngOnInit();
         this.router.navigate(['/main1']);
       },

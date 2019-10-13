@@ -64,8 +64,8 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    const token = this.cookieService.get("token");
-    // if (token) {
+    var token = this.cookieService.get("token");
+    if (token) {
     this.apiService.getMovies().subscribe(
         
         data => {
@@ -79,9 +79,9 @@ export class MainComponent implements OnInit {
           console.log(error);
         }
       )
-    // } else { 
-      // this.router.navigate(['/auth']);
-    // }
+    } else { 
+      this.router.navigate(['/auth']);
+    }
 
 
     // this.apiService.getMovie(1).subscribe(
